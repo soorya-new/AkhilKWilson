@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ZeroOne | Cybersecurity</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+   <div id="intro-screen">
+        <div id="hacker-image">
+            <pre class="ascii-art">
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█                                      █
+█    █████████▄             ▄█████████    █
+█    ██▀───▀███           ███▀───▀██    █
+█    ███  ▀  ███           ███  ▀  ███    █
+█    ▀██▄▄▄▄██▀             ▀██▄▄▄▄██▀    █
+█    █  ███  █             █  ███  █    █
+█    █  ███  █             █  ███  █    █
+█    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+            </pre>
+        </div>
+        <pre id="hacker-text"></pre><span id="cursor">_</span>
+    </div>
+
+    <nav class="side-nav">
+        <div class="dot active" data-target="intro" id="intropage"><i class="fa-solid fa-house" id="icon"></i></div>
+        <div class="dot" data-target="about"><i class="fa-solid fa-circle-info" id="icon"></i></div>
+        <div class="dot" data-target="tools"><i class="fa-solid fa-wand-magic-sparkles" id="icon"></i></div>
+        <div class="dot" data-target="Projects"><i class="fa-solid fa-diagram-project" id="icon"></i></div>
+        <div class="dot" data-target="Education"><i class="fa-solid fa-graduation-cap" id="icon"></i></div>
+        <div class="dot" data-target="contact"><i class="fa-solid fa-phone" id="icon"></i></div>
+    </nav>
+
+    <section class="hero" id="intro">
+        <div class="sub"><div id="binary-container"></div></div>
+        <p style="font-size: 1.4rem;">“Breaking things to make them stronger.”</p>
+        <h1 id="typing"></h1> <p class="binary" style="color: rgb(189, 189, 189);">Cybersecurity Analyst & Ethical Hacker</p>
+        <button onclick="scrollToSection('about')">Explore ↓</button>
+    </section>
+
+    <section id="about">
+        <div class="aboutsec">
+            <div class="aboutdesc">
+                <h2>About Me</h2>
+                <p>From a curious teen who wondered "What if I could bypass this login screen?" to a cybersecurity analyst battling real-world threats, my journey began with curiosity and grew into a mission.</p>
+                <p>Today, I uncover vulnerabilities, automate recon with Python, and protect systems ethically. I thrive in pressure, always learning faster than attackers evolve.</p>
+            </div>
+            <div class="resumeabout" onclick="openResume()">
+                View Resume
+            </div>
+        </div>
+    </section>
+
+    <section id="tools">
+        <h2><span class="terminal-icon" style="padding-bottom: 15px;"></span>>> Tools & Technologies</h2>
+        <div class="tools-container">
+            <div class="tool-group">
+                <h3><i class="fas fa-laptop-code"></i> Pentesting Tools</h3>
+                <p>Kali Linux, Burp Suite, Wireshark, Metasploit, Nmap, Nessus, Hydra, OWASP ZAP</p>
+            </div>
+            <div class="tool-group">
+                <h3><i class="fab fa-python"></i> Languages & Scripting</h3>
+                <p>Python, Bash, PowerShell, JavaScript</p>
+            </div>
+            <div class="tool-group">
+                <h3><i class="fas fa-desktop"></i> Operating Systems</h3>
+                <p>Linux (Kali, Parrot), Windows</p>
+            </div>
+            <div class="tool-group">
+                <h3><i class="fas fa-shield-alt"></i> Web Security</h3>
+                <p>SQLi, XSS, IDOR, CSRF, OWASP Top 10</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="Projects" class="projects-section">
+        <h2 class="neon-title">>> Timeline & Projects</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="year">2024 - Present</span>
+                <div class="card">
+                    <h3>Bug Bounty Hunter</h3>
+                    <p>Valid reports on <span>HackerOne</span> & <span>Bugcrowd</span>.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2023 - 2024</span>
+                <div class="card">
+                    <h3>Cyber Lab Intern</h3>
+                    <p>Performed <span>network audits</span>, <span>bash scripting</span>, and <span>log analysis</span>.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2022 - Present</span>
+                <div class="card">
+                    <h3>CTF Competitor</h3>
+                    <p>Worked on <span>reverse engineering</span>, <span>web exploits</span>, and <span>steganography</span>.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2021</span>
+                <div class="card">
+                    <h3>Home Pentest Lab</h3>
+                    <p>Simulated environments using <span>DVWA</span> & <span>Metasploitable</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Education" class="glass-section">
+        <h2 class="title"> Education</h2>
+        <div class="scroll-box single-card">
+            <div class="card">
+                <h3>BCA</h3>
+                <p>Calicut University <span class="year">(2022–2025)</span></p>
+            </div>
+        </div>
+        <h2 class="title"> Certifications</h2>
+        <div class="scroll-box card-list-horizontal">
+            <div class="card">
+                <h3>CEH</h3>
+                <p>Certified Ethical Hacker <span class="status">(In Progress)</span></p>
+            </div>
+            <div class="card">
+                <h3>CSA</h3>
+                <p>Certified SOC Analyst <span class="status">(In Progress)</span></p>
+            </div>
+            <div class="card">
+                <h3>TryHackMe / HTB</h3>
+                <p>Completed Paths & Badges</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 class="neon-heading">> Contact Me</h2>
+        <div class="contact-links">
+            <a href="mailto:akhilkwilson666@gmail.com" target="_blank" class="contact-link">
+                <i class="fas fa-envelope"></i> akhilkwilson666@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/akhilkwilson" target="_blank" class="contact-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/akhilkwilson" target="_blank" class="contact-link">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+    </section>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

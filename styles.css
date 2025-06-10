@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+/* Intro Page Styles */
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* To stack image, text and cursor */
+    gap: 20px; /* Space between image and text */
+    z-index: 9999; /* Ensure it's on top of everything */
+    color: #00FF41; /* Green text for hacker vibe, matching your theme */
+    font-family: 'JetBrains Mono', monospace; /* Using your existing font */
+    font-size: 1.5em;
+    opacity: 1;
+    transition: opacity 1s ease-out; /* Smooth fade-out */
+}
+
+#intro-screen.hidden {
+    opacity: 0;
+    visibility: hidden; /* Hide it completely after fading */
+}
+
+#hacker-image {
+    color: #00FF41; /* Green color for the ASCII art */
+    font-size: 20px; /* Adjust size as needed, larger for prominence */
+    text-align: center;
+    line-height: 0.9; /* Adjust line height for compact ASCII art */
+    opacity: 1;
+    animation: glitch-image 2s infinite linear alternate; /* Combined animations */
+    transform: scale(1); /* Initial state for animation */
+    transition: opacity 0.5s ease-out; /* For fading out with the screen */
+    /* Add text-shadow for a more prominent glow for text-based art */
+
+}
+
+#hacker-image .ascii-art {
+    white-space: pre; /* Preserve whitespace exactly */
+    margin: 0; /* Remove default margin */
+    /* Ensure no extra padding/margins on the pre tag */
+}
+
+/* Glitch animation for the text-based image */
+@keyframes glitch-image {
+    0% { transform: translate(0, 0); opacity: 1; }
+    20% { transform: translate(-2px, 2px); opacity: 0.9; }
+    40% { transform: translate(-2px, -2px); opacity: 1; }
+    60% { transform: translate(2px, 2px); opacity: 0.8; }
+    80% { transform: translate(2px, -2px); opacity: 1; }
+    100% { transform: translate(0, 0); opacity: 0.9; }
+}
+
+#hacker-text {
+    font-size: 30px;
+    white-space: pre-wrap; /* Preserve whitespace and allow wrapping */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center the text */
+    max-width: 90%; /* Prevent overflow on smaller screens */
+}
+
+#cursor {
+    display: inline-block; /* Make cursor inline with text, but block-like for animation */
+    margin-left: 5px; /* Space between text and cursor */
+    animation: blink-hacker 1s step-end infinite; /* Blinking animation */
+}
+
+/* Keyframe for blinking cursor specific to intro */
+@keyframes blink-hacker {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Existing Styles Below */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 100px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero {
+  text-align: center;
+  position: relative;
+}
+
+.hero p{
+  color: #ffffff;
+}
+
+
+h1 {
+  font-size: 2.5rem;
+  color: #00FF41;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #00FF41;
+  margin-bottom: 20px;
+}
+
+p, li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #00FF41;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00ff9f;
+  animation: glitch 0.2s;
+}
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00FF41;
+}
+
+/* Side Nav */
+.side-nav {
+  position: fixed;
+  top: 68%;
+  left: 3%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  z-index: 999;
+}
+
+.dot {
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #00FF41;
+  transform: scale(1.5);
+}
+
+#icon {
+  color: #000;
+  font-size: 14px;
+}
+
+/* Glitch */
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, -1px); }
+  75% { transform: translate(-1px, -2px); }
+}
+
+/* Binary Background */
+.sub {
+  margin-top: -300px;
+  background-color: black;
+  height: 405px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+#binary-container {
+  width: 100vw;
+  height: 10vh;
+  color: #00FF41;
+  font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.binary-digit {
+  width: 10px;
+  height: 14px;
+  animation: blink 3s infinite;
+}
+
+/* Renamed to avoid conflict with intro cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+#about {
+  padding: 80px 30px;
+}
+
+.aboutsec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.aboutdesc {
+  flex: 1;
+  background-color: #000000;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00FF41;
+  transition: transform 0.3s ease;
+}
+
+.aboutdesc:hover {
+  transform: scale(1.02);
+}
+
+.aboutdesc h2 {
+  font-size: 40px;
+  color: #00FF41;
+  margin-bottom: 20px;
+}
+
+.aboutdesc p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.resumeabout {
+  flex: 0 0 250px;
+  height: 200px;
+  background-color: #00FF41;
+  color: #0e0e0e;
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00FF41;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.resumeabout:hover {
+  background-color: #32ff66;
+  transform: scale(1.05);
+}
+
+#tools h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #00FF41;
+  position: relative;
+}
+
+
+/* Container Flex Styling */
+.tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 30px;
+}
+
+/* Tool Box Styling */
+.tool-group {
+  background-color: #001806ab;
+  border: 1px solid #00ff407e;
+  border-radius: 12px;
+  padding: 20px;
+  width: 320px;
+  margin: 8px;
+  box-shadow: 0 0 15px #00FF41;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tool-group:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #00FF41;
+}
+
+.tool-group h3 {
+  color: #00FF41;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.tool-group p {
+  color: #e0f7fa;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tools-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.projects-section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  height: 500px; /* Set height as needed */
+  overflow: hidden;
+  position: relative;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow-y: auto;
+  height: 100%;
+  padding-right: 10px; /* space for scrollbar */
+  padding-left: 10px;
+  width: 800px;
+  scroll-behavior: smooth;
+}
+
+#Projects h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #00FF41;
+  position: relative;
+}
+
+.timeline::-webkit-scrollbar {
+  width: 8px;
+}
+.timeline::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+.timeline::-webkit-scrollbar-thumb {
+  background-color: #00FF41;
+  border-radius: 4px;
+}
+
+.timeline-item {
+  opacity: 0;
+  margin: 0px;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+  
+.glass-section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  color: #00FF41;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin: 20px 0 10px;
+  position: relative;
+  display: inline-block;
+  color: #00FF41;
+  text-shadow: 0 0 10px #2c322d;
+}
+
+@keyframes slideIn {
+  from { width: 0; }
+  to { width: 60%; }
+}
+
+/* Scroll Container */
+.scroll-box {
+  overflow-x: auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+/* Education single card setup */
+.single-card {
+  display: flex;
+  gap: 20px;
+}
+
+/* Certifications horizontal scroll layout */
+.card-list-horizontal {
+  display: flex;
+  gap: 20px;
+  width: 1000px;
+}
+
+/* Common card styles */
+.card {
+  min-width: 200px;
+  background: rgba(0, 255, 65, 0.05);
+  border: 1px solid #00FF41;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 13px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 20px #00FF41;
+}
+
+.card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 0 0 5px #000000;
+}
+
+.card p {
+  font-size: 1em;
+  color: #b3ffcc;
+}
+
+.status {
+  font-style: italic;
+  color: #ccffcc;
+}
+
+/* Optional: Hide scrollbar (desktop only) */
+.scroll-box::-webkit-scrollbar {
+  height: 6px;
+}
+.scroll-box::-webkit-scrollbar-thumb {
+  background: #00FF41;
+  border-radius: 3px;
+}
+.scroll-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: black;
+  color: #00FF41;
+  font-family: 'Courier New', monospace;
+}
+
+.neon-heading {
+  font-size: 2.5em;
+  color: #00FF41;
+  margin-bottom: 30px;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-link {
+  font-size: 1.2em;
+  color: #00FF41;
+  text-decoration: none;
+  border: 1px solid #00FF41;
+  padding: 12px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 0 0 6px #00ff40;
+  background: rgba(0, 255, 65, 0.05);
+  backdrop-filter: blur(4px);
+}
+
+.contact-link i {
+  font-size: 1.5em;
+}
+
+.contact-link:hover {
+  background-color: #00FF41;
+  color: black;
+  box-shadow: 0 0 20px #00FF41;
+  transform: scale(1.05);
+}
